@@ -18,14 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(ideas) { idea in
-                NavigationLink(value: idea) {
-                    VStack(alignment: .leading){
-                        Text(idea.name)
-                        Text(idea.detailedDescription)
-                            .textScale(.secondary)
-                            .foregroundStyle(.secondary)
-                    }
-                }
+          AppIdeaListRow(idea: idea)
             }
             .navigationTitle("App ideas")
             .navigationDestination(for: AppIdea.self) {
